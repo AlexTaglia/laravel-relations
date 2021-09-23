@@ -19,9 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/home', function () {
-    $articles = Article::all();
-    $articles = $articles->reverse();
-
+    $articles = Article::orderBy('created_at', 'DESC')->paginate(5);
     return view('home', compact('articles'));
 })->name('home');
 

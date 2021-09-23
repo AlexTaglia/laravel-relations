@@ -2,10 +2,20 @@
 
 @section('content')
 <div class="row">
+
+    <div class="col-12 fixed-top mt-1">
+
+        @foreach ($articles as $article)
+            {{ $article->name }}
+        @endforeach
+
+        {{ $articles->links() }}
+    </div>
+
     <div class="col-12 mt-5">
         <a href="{{ route('article.create') }}"> Add Article</a>
-
     </div>
+
     <article class="col-12 mt-5">
         @foreach($articles as $article)
             <div class="row article m-3 p-2">

@@ -10955,3 +10955,7 @@ a.text-dark:focus {
   box-shadow: 4px 4px 4px rgba(139, 139, 139, 0.7);
 }
 
+ul {
+  justify-content: center;
+}
+
