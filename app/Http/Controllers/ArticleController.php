@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Article;
+use App\Author;
+
 
 class ArticleController extends Controller
 {
@@ -27,7 +30,8 @@ class ArticleController extends Controller
     // ---------------------CREATE---
     public function create()
     {
-        //
+        $authors = Author::all();
+        return view('articles.create', compact('authors'));
     }
 
     /**

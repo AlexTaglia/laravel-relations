@@ -20,3 +20,5 @@ Route::get('/', function () {
 
     return view('home', compact('articles'));
 });
+
+Route::resource('article', 'ArticleController');

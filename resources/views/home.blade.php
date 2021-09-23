@@ -2,6 +2,10 @@
 
 @section('content')
 <div class="row">
+    <div class="col-12 mt-5">
+        <a href="{{ route('article.create') }}"> Add Article</a>
+
+    </div>
     <article class="col-12 card mt-5">
         @foreach($articles as $article)
             <div class="row card m-3 p-2">
