@@ -44,7 +44,17 @@ class ArticleController extends Controller
     // ---------------------STORE---
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $article = new Article;
+        $article->title = $data['title'];
+        $article->content = $data['content'];
+        $article->img = $data['img'];
+        $article->author_id = $data['author_id'];
+
+        $article->save();
+
+        return redirect()->route('home');
     }
 
     /**

@@ -15,10 +15,14 @@ use App\Article;
 */
 
 Route::get('/', function () {
+    return redirect()->route('home');
+});
+
+Route::get('/home', function () {
     $articles = Article::all();
     $articles = $articles->reverse();
 
     return view('home', compact('articles'));
-});
+})->name('home');
 
 Route::resource('article', 'ArticleController');

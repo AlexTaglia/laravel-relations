@@ -4,7 +4,7 @@
 
 <div class="mt-5">
 
-<a href="{{ url('/') }}"> Home </a>
+<a href="{{ url('/home') }}"> Home </a>
 
 
     @if ($errors->any())
