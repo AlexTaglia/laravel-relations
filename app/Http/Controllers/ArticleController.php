@@ -57,7 +57,12 @@ class ArticleController extends Controller
 
         $article->save();
 
-        $article->tag()->sync($data['tags']);
+        
+        if(array_key_exists('tags', $data)) {
+     
+            $article->tag()->sync($data['tags']);
+        
+        }
 
         // return redirect()->route('home');
         return redirect()->route('article.show', $article->id);
