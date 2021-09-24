@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/home', function () {
-    $articles = Article::orderBy('created_at', 'DESC')->paginate(5);
+    $articles = Article::orderBy('created_at', 'DESC')->paginate(3);
     return view('home', compact('articles'));
 })->name('home');
 

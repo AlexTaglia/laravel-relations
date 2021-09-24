@@ -9,7 +9,7 @@
             {{ $article->name }}
         @endforeach
 
-        {{ $articles->links() }}
+        {{ $articles->onEachSide(1)->links() }}
     </div>
 
     <div class="col-12 mt-5">
