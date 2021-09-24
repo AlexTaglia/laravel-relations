@@ -2,10 +2,7 @@
 
 @section('content')
 
-<div class="mt-5">
-
-<a href="{{ url('/home') }}"> Home </a>
-
+<div class="mt-5 pt-2">
 
     @if ($errors->any())
         <div class="alert alert-danger">

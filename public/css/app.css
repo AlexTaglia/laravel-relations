@@ -10964,8 +10964,50 @@ ul {
   height: 22px;
   line-height: 22px;
   border-radius: 11px;
+  padding: 0 12px;
   border: 1px solid #8b8b8bb3;
   margin-right: 12px;
+  margin-bottom: 12px;
   background-color: #8b8b8b28;
+}
+
+.affari {
+  background-color: green;
+}
+
+.cinema {
+  background-color: salmon;
+}
+
+.cronaca {
+  background-color: olive;
+}
+
+.intrattenimento {
+  background-color: red;
+}
+
+.musica {
+  background-color: yellow;
+}
+
+.opinione {
+  background-color: yellowgreen;
+}
+
+.salute {
+  background-color: brown;
+}
+
+.scienza {
+  background-color: pink;
+}
+
+.sport {
+  background-color: palevioletred;
+}
+
+.turismo {
+  background-color: fuchsia;
 }
 

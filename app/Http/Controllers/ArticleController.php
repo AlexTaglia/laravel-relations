@@ -59,9 +59,8 @@ class ArticleController extends Controller
 
         $article->tag()->sync($data['tags']);
 
-        return redirect()->route('home');
-        // return redirect()->route('articles.show', $article);
-
+        // return redirect()->route('home');
+        return redirect()->route('article.show', $article->id);
     }
 
     /**
@@ -74,7 +73,8 @@ class ArticleController extends Controller
     // ---------------------SHOW---
     public function show($id)
     {
-        //
+        $article = Article::find($id);
+        return view('articles.show', compact('article'));
     }
 
     /**
