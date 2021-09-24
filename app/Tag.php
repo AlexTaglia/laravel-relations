@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Tag extends Model
 {
     public function article() {
-        return $this->belongsToMany(Article::class);
+        return $this->belongsToMany(Article::class, 'tag_article');
     }
 }

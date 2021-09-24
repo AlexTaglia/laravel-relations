@@ -10952,10 +10952,20 @@ a.text-dark:focus {
 }
 
 .article:hover {
-  box-shadow: 4px 4px 4px rgba(139, 139, 139, 0.7);
+  box-shadow: 4px 4px 4px #8b8b8bb3;
 }
 
 ul {
   justify-content: center;
+}
+
+.chip {
+  text-align: center;
+  height: 22px;
+  line-height: 22px;
+  border-radius: 11px;
+  border: 1px solid #8b8b8bb3;
+  margin-right: 12px;
+  background-color: #8b8b8b28;
 }
 

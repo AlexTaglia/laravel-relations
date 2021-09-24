@@ -41,6 +41,14 @@
                             <p class="text-secondary">{{ $article->created_at }}</p>
                         </div>
                     </div>
+
+                    <div class="row">
+                        @foreach ($article->tag as $tag)
+                            <div class="col-2 chip">
+                                {{ $tag->name }}
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
 
             </div>

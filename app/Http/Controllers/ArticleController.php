@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Article;
 use App\Author;
+use App\Tag;
 
 
 class ArticleController extends Controller
@@ -31,7 +32,9 @@ class ArticleController extends Controller
     public function create()
     {
         $authors = Author::all();
-        return view('articles.create', compact('authors'));
+        $tags = Tag::all();
+
+        return view('articles.create', compact('authors', 'tags'));
     }
 
     /**
@@ -54,7 +57,11 @@ class ArticleController extends Controller
 
         $article->save();
 
+        $article->tag()->sync($data['tags']);
+
         return redirect()->route('home');
+        // return redirect()->route('articles.show', $article);
+
     }
 
     /**
