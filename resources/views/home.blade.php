@@ -36,6 +36,15 @@
                         </div>
                         @endforeach
                     </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <a href=" {{ route('article.show', $article) }}">
+                                <button>
+                                    more
+                                </button>
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 
             </div>

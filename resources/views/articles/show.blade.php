@@ -3,6 +3,14 @@
 @section('content')
 <div class="row">
 
+    @if ($errors->any())
+    <ul>
+    @foreach ($errors->all() as $error)
+        <li> {{ $error }}</li>
+    @endforeach
+    </ul>
+    @endif
+
     </div>
 
     <article class="col-12 mt-5 pt-5 pb-5">
@@ -37,9 +45,34 @@
                             </div>
                         @endforeach
                     </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <form action="{{ route('comment.store', ['id'=>$article->id] ) }}" method='POST'>
+
+                            @csrf
+                                <div class="form-group">
+                                    <label for="comment">Lascia un commento:</label>
+                                    <textarea class="form-control mb-3" name="comment" id="comment" rows="3" placeholder="Lascia un commento"></textarea>
+                                    <button type="submit">Pubblica</button>
+                                </div>    
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        @foreach ($article->comment as $comment)
+                            <p> {{ $comment->comment }}</p>
+                            <p> {{ $comment->created_at }}</p>
+                            <hr>
+                        @endforeach
+                    </div>
                 </div>
 
             </div>
+
     </article>
 </div>
 @endsection

@@ -24,3 +24,5 @@ Route::get('/home', function () {
 })->name('home');
 
 Route::resource('article', 'ArticleController');
+
+Route::resource('comment', 'CommentController');
