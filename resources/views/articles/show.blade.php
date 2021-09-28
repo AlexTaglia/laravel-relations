@@ -23,7 +23,9 @@
                     </div>
                     <div class="row">
                         <div class="col-4">
-                            <img class="img-fluid" src="{{ $article->img }}" alt="">
+                            <!-- <img class="img-fluid" src="{{ $article->img }}" alt=""> -->
+                            <img  class="img-fluid" src="{{ asset('storage/'. $article->img) }}" alt="">
+
                         </div>
         
                         <div class="col-8">

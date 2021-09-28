@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Article;
 use App\Author;
 use App\Tag;
+use Illuminate\Support\Facades\Storage;
 
 
 class ArticleController extends Controller
@@ -47,12 +48,22 @@ class ArticleController extends Controller
     // ---------------------STORE---
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'required',
+            'content' => 'required',
+            'img' => ['required', 'image'],
+        ]);
+
         $data = $request->all();
 
         $article = new Article;
         $article->title = $data['title'];
         $article->content = $data['content'];
-        $article->img = $data['img'];
+        // $article->img = $data['img'];
+
+        $imgPath = Storage::put('images', $data['img']);
+        $article->img = $imgPath;
+
         $article->author_id = $data['author_id'];
 
         $article->save();

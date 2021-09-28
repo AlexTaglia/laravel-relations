@@ -14,7 +14,7 @@
         </div>
     @endif
 
-    <form class="mt-5" action="{{route('article.store')}}" method='post'>
+    <form class="mt-5" action="{{route('article.store')}}" method='post' enctype="multipart/form-data">
         @csrf
         <div class="form-group mb-4">
             <label for="title">Titolo:</label>
@@ -27,8 +27,12 @@
         </div>
 
         <div class="form-group mb-4">
-            <label for="img">Immagine:</label>
-            <input class="form-control" type="text" name="img" id="img">
+            <!-- <label for="img">Immagine:</label> -->
+            <!-- <input class="form-control" type="text" name="img" id="img"> -->
+            <label for="img">Picture</label>
+            <div>
+                <input type="file" class="" name="img" id="img">
+            </div>
         </div>
 
         <div class="form-group mb-4">
