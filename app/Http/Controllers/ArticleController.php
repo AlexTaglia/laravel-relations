@@ -51,7 +51,7 @@ class ArticleController extends Controller
         $request->validate([
             'title' => 'required',
             'content' => 'required',
-            'img' => ['required', 'image'],
+            'img' => 'required', 'image | mimes:jpeg,jpg,png',
         ]);
 
         $data = $request->all();
